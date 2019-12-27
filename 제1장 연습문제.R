@@ -26,6 +26,9 @@ class(rain2)
 #04. R에서 제공하는 women 데이터 셋을 다음과 같이 처리하시오.
 
 #조건1) women은 어떤 데이터 셋 인지를 쓰시오? 15열의 관측치 및 키와 몸무게 변수를 가진 데이터프레임
+data()
+#Average Heights and Weights for American Women
+
 str(women)
 women
 
