@@ -152,7 +152,7 @@ str(Boston)
 # medv : y변수(종속변수)
 
 # 칼럼 가져오기
-cols <- names(Boston)
+cols <- names(Boston) #변수이름만 가져오기
 cols # [1]"crim" [14]"medv"
 
 idx <- which(cols == "medv")
