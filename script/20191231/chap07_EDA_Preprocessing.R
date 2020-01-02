@@ -22,7 +22,7 @@ summary(dataset) # price : NA's : 30
 # 2) 칼럼 기준 결측치 제거 : subset()
 dataset2 <- subset(dataset, !is.na(price)) #(dataset, 조건식)
 dim(dataset2) # 270  7
-head(dataset2)
+head(dataset2, 30)
 
 # 3) 전체 칼럼 기준 결측치 제거 : na.omit()
 dataset2 <- na.omit(dataset)
@@ -99,13 +99,14 @@ price <- dataset$price # 구매금액
 plot(price)
 
 # 이상치 발견
+summary(dataset2$price)
 boxplot(price)$stats # 정상적인 구매금액 하한치, 상한치
 
 # 이상치 정제
 dataset2 <- dataset # 복제
 dataset2 <- subset(dataset, price >= 2.1 & dataset$price <= 7.9)
 plot(dataset2$price)
-
+boxplot(dataset2$price)
 # age 변수 이상치 처리
 summary(dataset2$age) # NA : 16
 dataset2 <- subset(dataset2, age >= 20 & age <= 69)
@@ -120,6 +121,7 @@ plot(dataset2$age)
 table(dataset2$resident)
 # 1   2   3   4   5 
 # 110  46  26  15  34 
+dataset2 <- subset(dataset, !is.na(resident))
 
 dataset2$resident2[dataset2$resident==1] <- "1.서울시"
 dataset2$resident2[dataset2$resident==2] <- "2.인천시"
@@ -127,6 +129,7 @@ dataset2$resident2[dataset2$resident==3] <- "3.대전시"
 dataset2$resident2[dataset2$resident==4] <- "4.대구시"
 dataset2$resident2[dataset2$resident==5] <- "5.울산시"
 
+dataset2[c("resident", "resident2")]
 # 2) 척도변경(연속형 -> 범주형)
 dataset2$age2[dataset2$age <= 30] <- "청년층"
 dataset2$age2[dataset2$age > 30 & dataset2$age <= 55] <- "중년층"
