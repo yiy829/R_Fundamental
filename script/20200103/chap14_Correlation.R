@@ -1,6 +1,7 @@
 # chap14_Correlation
 
 # dataset 가져오기
+setwd("c:/Rwork/data")
 product <- read.csv("Product.csv")
 
 # 친밀도, 적절성, 만족도 : 5점(등간척도)

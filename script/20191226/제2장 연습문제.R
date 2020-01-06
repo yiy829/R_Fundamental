@@ -71,14 +71,14 @@ score <- data.frame(Kor=kor, Eng=eng, Math=mat)
 #score <- data.frame(kor, eng, mat)
 score
 # 조건2) 행/열 방향으로 max()함수를 적용하여 최댓값 구하기
-apply(score, 2, max) #열
 apply(score, 1, max) #행
+apply(score, 2, max) #열
 
 # 조건3) 행/열 방향으로 mean()함수를 적용하여 평균 구하기(소숫점 2자리 까지 표현)
 #  힌트 : round(data, 자릿수)
+round((apply(score, 1, mean)), 2) #행
 round((apply(score, 2, mean)), 2) #열
 
-round((apply(score, 1, mean)), 2) #행
 
 # 조건4) 행 단위 분산과 표준편차 구하기  
 #  힌트 : var(), sd() 
