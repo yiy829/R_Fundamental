@@ -1,4 +1,4 @@
-# chap14_Correlation
+# chap11_Correlation
 
 # dataset 가져오기
 setwd("c:/Rwork/data")

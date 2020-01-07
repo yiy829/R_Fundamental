@@ -106,6 +106,10 @@ model <- lm(income ~ education + women + prestige, data = newdata)
 model
 #(Intercept)    education        women     prestige  
 #     -253.8        177.2        -50.9        141.4  
+
+# Y = matmul(X, a) + b -> python
+# Y = (X %*% a)(행렬곱) + b -> R
+
 income <- 12351 # Y(정답)
 education <- 13.11 # x1
 women <- 11.16 # x2
@@ -123,9 +127,9 @@ err # 1121.432
 # 4) 회귀모델 분석
 summary(model)
 # 모델 유의성 : F-statistic: 58.89 on 3 and 98 DF,  p-value: < 2.2e-16
-# 모델 설명력 : Adjusted R-squared:  0.6323
+# 모델 설명력 : Adjusted R-squared:  0.6323 (1에 가까울수록 좋다, 63%의 설명력을 가진다)
+# x 유의성 검정(T 검정통계량) : 영향력 판단
 
-# x 유의성 검정 :
 #               Estimate Std. Error t value Pr(>|t|)    
 # (Intercept) -253.850   1086.157  -0.234    0.816    
 # education    177.199    187.632   0.944    0.347(영향 없음)    

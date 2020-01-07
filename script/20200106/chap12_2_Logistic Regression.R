@@ -154,7 +154,7 @@ model <- multinom(Species ~., data = train_iris)
 
 # model 평가
 y_pred <- predict(model, test_iris, type = "probs")
-# type = "probs" : 0~1확률(합 = 1)로 결과값을 예측하겠다
+# type = "probs" : 0~1확률(합 = 1)로 결과값을 예측하겠다 -> softmax
 range(y_pred)
 #  1.705474e-145(0) ~ 1.000000e+00(1)
 
